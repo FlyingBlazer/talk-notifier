@@ -4,7 +4,6 @@ module ExceptionNotifier
   class TalkNotifier
     def initialize(options)
       @author_name = options[:author_name]
-      @redirect_url = options[:redirect_url]
       @backtrace_depth = options[:backtrace_depth] || 10
       @hook_url = options[:hook_url]
     end
