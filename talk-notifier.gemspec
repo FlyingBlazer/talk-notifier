@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/FlyingBlazer/talk-notifier'
   spec.license       = 'MIT'
 
-  gem.files          = `git ls-files`.split($/)
+  spec.files         = `git ls-files`.split($/)
   spec.require_paths = ['lib']
 
   spec.add_dependency 'exception_notification', '~> 4.0'
