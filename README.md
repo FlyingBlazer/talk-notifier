@@ -1,6 +1,6 @@
-# Talk::Notifier
+# ExceptionNotifier::TalkNotifier
 
-Notify exceptions using Talk.
+Notify exceptions using [Talk](http://jianliao.com).
 
 ## Installation
 
@@ -23,12 +23,15 @@ Or install it yourself as:
 Add following lines to your `exception-notification` configurations.
 
 ```ruby
-  Rails.application.config.middleware.use ExceptionNotification::Rack,
-                                          :talk => {
-                                              author_name: 'something you like', # message author name
-                                              hook_url: 'your hook url', # your hook url
-                                              backtrace_depth: 10, # (optional) backtrace depth you want, default 10
-                                          }
+  Rails.application.config.middleware.use(
+      ExceptionNotification::Rack,
+      :talk => {
+          hook_url: 'your hook url',         # your webhook url
+          author_name: 'something you like', # (optional) author name, default hostname
+          backtrace_depth: 10,               # (optional) backtrace depth you want, nil if you want full backtrace, default nil
+          clean_backtrace: false,            # (optional) whether or not to clean backtrace using Rails::BacktraceCleaner, default false
+      }
+  )
 ```
 
 ## Contributing

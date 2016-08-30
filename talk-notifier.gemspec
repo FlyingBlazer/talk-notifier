@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = 'talk-notifier'
-  spec.version       = '1.0.0'
+  spec.version       = '1.0.1'
   spec.authors       = ['于湛']
   spec.email         = ['yuzhan1994@gmail.com']
 
@@ -16,5 +16,5 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'exception_notification', '~> 4.0'
-  spec.add_dependency 'faraday', '~> 0.9.0'
+  spec.add_dependency 'faraday', '~> 0.9', '>= 0.8.0'
 end
